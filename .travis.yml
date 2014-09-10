@@ -1,0 +1,16 @@
+language: ruby
+
+env:
+  - TEST_SUITE=unit
+  - TEST_SUITE=integration
+
+script: "bundle exec rake test:$TEST_SUITE"
+
+rvm:
+  - "1.9.3"
+  - "2.1.2"
+  - "ruby-head"
+  - "jruby-19mode"
+  - "jruby-head"
+  - "rbx-2"
+
