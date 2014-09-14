@@ -4,7 +4,6 @@ module Schlepp
       class TableObject
         def initialize(table_object, opts = {})
           @table_object = table_object
-          @written = 0
         end
 
         def write(rows)

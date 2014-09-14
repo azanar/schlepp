@@ -17,8 +17,8 @@ module Schlepp
         end
       end
 
-      def sequence
-        @chunker.sequence
+      def parts
+        @chunker.parts
       end
 
       def finalize

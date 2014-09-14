@@ -1,6 +1,7 @@
 require 'hydrogen'
 
 require "schlepp/env"
+require "schlepp/sink"
 require "schlepp/source/csv"
 require "schlepp/version"
 
@@ -12,6 +13,5 @@ module Schlepp
       sink.write(s)
     end
     sink.finalize
-    sink.sequence
   end
 end

@@ -13,6 +13,10 @@ module Schlepp
           chunker.sequence
         end
 
+        def parts
+          chunker.parts
+        end
+
         def next
           part = chunker.next 
 

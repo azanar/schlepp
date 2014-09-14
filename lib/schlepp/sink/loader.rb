@@ -3,18 +3,18 @@ require 'schlepp/sink/data_object'
 module Schlepp
   module Sink
     class Loader
-      def initialize(table_object, opts = {})
-        @table_object = table_object
+      def initialize(writer, opts = {})
+        @writer = writer
 
-        @file = DataObject.new(table_object)
+        @file = DataObject.new(writer)
       end
 
       def name
-        @table_object.name
+        @writer.name
       end
 
       def path
-        @table_object.path
+        @writer.path
       end
 
       def write(rows)
@@ -29,7 +29,6 @@ module Schlepp
 
       def finalize
         @file.finalize
-        @table_object
       end
     end
   end
