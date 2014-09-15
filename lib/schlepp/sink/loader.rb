@@ -18,7 +18,7 @@ module Schlepp
       end
 
       def write(rows)
-        rows.each do |row|
+        Array(rows).each do |row|
           @file.write(row)
         end
       end
