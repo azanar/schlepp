@@ -1,5 +1,7 @@
-require 'schlepp/sinks/fs/table_object'
 require 'schlepp/sink/chunker'
+
+require 'schlepp/sinks/fs/table_object'
+require 'schlepp/sinks/fs/table_object/writer'
 
 module Schlepp
   module Sink
