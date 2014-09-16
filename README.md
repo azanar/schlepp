@@ -1,6 +1,6 @@
 # Schlepp
 
-Schlepp is a chunking file uploader for S3
+An extensible chunking file transferer
 
 ## Installation
 
