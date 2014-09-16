@@ -1,3 +1,4 @@
+require 'hydrogen/table_object/collection'
 
 module Schlepp
   module Sink
