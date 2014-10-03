@@ -3,9 +3,9 @@ require 'schlepp/sink/data_stream'
 module Schlepp
   module Sink
     class DataObject
-      def initialize(table_object)
+      def initialize(table_object_writer)
         @stream = DataStream.new
-        @table_object = table_object
+        @table_object_writer = table_object_writer
       end
 
       def write(data)
@@ -19,7 +19,7 @@ module Schlepp
       def finalize
         @stream.finalize
 
-        @table_object.write(@stream.to_s)
+        @table_object_writer.write(@stream.to_s)
       end
     end
   end
