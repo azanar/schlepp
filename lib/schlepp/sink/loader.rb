@@ -13,10 +13,6 @@ module Schlepp
         @writer.name
       end
 
-      def path
-        @writer.path
-      end
-
       def write(rows)
         Array(rows).each do |row|
           @file.write(row)
