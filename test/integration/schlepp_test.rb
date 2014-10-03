@@ -6,12 +6,9 @@ require 'schlepp'
 class Schlepp::IntegrationTest < Test::Unit::TestCase
   setup do
     @mock_writer = mock
-
-    #@mock_model = mock
-    #@mock_model.expects(:name).at_least_once.returns("mock_models")
   end
 
-  test 'stuff' do
+  test '#loader' do
     table_object = Hydrogen::TableObject.new(@mock_model)
 
     loader = Schlepp::Sink::Loader.new(@mock_writer)
