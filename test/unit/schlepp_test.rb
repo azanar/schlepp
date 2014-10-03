@@ -5,8 +5,6 @@ require 'schlepp'
 class SchleppTest < Test::Unit::TestCase
   include TestHelper 
   test '.schlepp' do
-    table_object = Hydrogen::TableObject.new(@mock_model)
-
     mock_source = mock
 
     mock_source.expects(:each).multiple_yields("foo", "bar", "baz")
@@ -19,6 +17,11 @@ class SchleppTest < Test::Unit::TestCase
 
     mock_sink.expects(:finalize)
 
-    Schlepp.schlepp(mock_source, mock_sink)
+    mock_parts = mock
+    mock_sink.expects(:parts).returns(mock_parts)
+
+    parts = Schlepp.schlepp(mock_source, mock_sink)
+
+    assert_equal parts, mock_parts
   end
 end
