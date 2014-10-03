@@ -23,7 +23,7 @@ module Schlepp
         end
 
         def file
-          @file ||= File.new("/tmp/#{@table_object.path}", 'w')
+          @file ||= File.new("#{@table_object.url.path}", 'w')
         end
       end
     end
