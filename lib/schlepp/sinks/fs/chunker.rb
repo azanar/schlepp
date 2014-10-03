@@ -9,7 +9,10 @@ module Schlepp
       class Chunker
         def initialize(table_object, opts = {})
           @table_object = table_object
+          @parts = []
         end
+
+        attr_accessor :parts
 
         def sequence
           chunker.sequence
@@ -22,15 +25,19 @@ module Schlepp
         def next
           part = chunker.next 
 
-          ts = Schlepp::Sink::Fs::TableObject.new(part)
+          table_obj = Schlepp::Sink::Fs::TableObject.new(part)
 
-          Schlepp::Sink::Loader.new(ts)
+          @parts << table_obj
+
+          writer = Schlepp::Sink::Fs::TableObject::Writer.new(table_obj)
+
+          Schlepp::Sink::Loader.new(writer)
         end
 
         private
 
         def chunker
-          @chunker ||= Schlepp::Sink::Chunker.new(@table_object)
+          @chunker ||= Schlepp::TableObject::Chunker.new(@table_object)
         end
       end
     end
