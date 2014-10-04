@@ -13,6 +13,10 @@ module Schlepp
         @writer.name
       end
 
+      def parts
+        @writer.parts
+      end
+
       def write(rows)
         Array(rows).each do |row|
           @file.write(row)

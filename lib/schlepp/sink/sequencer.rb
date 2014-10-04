@@ -3,6 +3,9 @@ module Schlepp
     module Sequencer
       DEFAULT_CHUNK_SIZE = 50 * 1024 * 1024 # 50 MB
       def initialize(table_object, opts = {})
+        if table_object.kind_of?(Hydrogen::TableObject::Base)
+          raise
+        end
         @table_object = table_object
         @chunker = chunker.new(table_object)
         @chunk_size = opts[:chunk_size] || DEFAULT_CHUNK_SIZE

@@ -1,5 +1,6 @@
 require 'schlepp/sink/sequencer'
 require 'schlepp/sinks/fs/chunker'
+require 'schlepp/sinks/fs/chunker/factory'
 require 'schlepp/sinks/fs/table_object/collection'
 
 module Schlepp
@@ -13,7 +14,7 @@ module Schlepp
         end
 
         def chunker
-          Schlepp::Sink::Fs::Chunker
+          Schlepp::Sink::Fs::Chunker::Factory.new('/tmp')
         end
       end
     end

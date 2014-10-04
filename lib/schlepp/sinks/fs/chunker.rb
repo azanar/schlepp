@@ -7,8 +7,9 @@ module Schlepp
   module Sink
     module Fs
       class Chunker
-        def initialize(table_object, opts = {})
+        def initialize(table_object, root, opts = {})
           @table_object = table_object
+          @root = root
           @parts = []
         end
 
@@ -25,7 +26,7 @@ module Schlepp
         def next
           part = chunker.next 
 
-          table_obj = Schlepp::Sink::Fs::TableObject.new(part)
+          table_obj = Schlepp::Sink::Fs::TableObject.new(part, @root)
 
           @parts << table_obj
 
