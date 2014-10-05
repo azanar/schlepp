@@ -1,12 +1,13 @@
-require 'schlepp/sink/table_object/loader'
-require 'schlepp/sink/table_object/chunker'
-
 module Schlepp
   class Sink
     module Adapter
-      class Compressor
+      class Chunker
         def initialize(table_object, opts = {})
           @table_object = table_object
+        end
+
+        def extension
+          nil
         end
 
         def sequence

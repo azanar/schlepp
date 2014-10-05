@@ -1,7 +1,7 @@
-require 'schlepp/sink/loader'
+require 'schlepp/sink/table_object/loader'
 
 module Schlepp
-  module Sink
+  class Sink
 
   end
 end

@@ -1,6 +1,3 @@
-require 'schlepp/sink/table_object/loader'
-require 'schlepp/sink/table_object/chunker'
-
 module Schlepp
   class Sink
     module Adapter
@@ -9,19 +6,13 @@ module Schlepp
           @table_object = table_object
         end
 
-        def sequence
-          chunker.sequence
+        def extension
+          'gz'
         end
 
-        def parts
-          chunker.parts
+        def writer
+          Schlepp::Sink::TableObject::Compressor::Writer
         end
-
-        def next
-          chunker.next 
-        end
-
-        private
 
         def chunker
           @chunker ||= Schlepp::TableObject::Chunker.new(@table_object)
@@ -31,3 +22,4 @@ module Schlepp
   end
 
 end
+

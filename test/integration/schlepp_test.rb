@@ -17,8 +17,6 @@ class Schlepp::IntegrationTest < Test::Unit::TestCase
   end
 
   test '.schlepp' do
-    table_object = Hydrogen::TableObject.new(@mock_model)
-
     res = Schlepp.schlepp(@mock_source, @mock_sink)
 
     refute res.nil?
