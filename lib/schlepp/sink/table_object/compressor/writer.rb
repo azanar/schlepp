@@ -18,8 +18,9 @@ module Schlepp
             end
           end
 
-          def written
-            @written
+
+          def rotate?
+            false
           end
 
           def finalize
