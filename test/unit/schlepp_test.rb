@@ -15,10 +15,8 @@ class SchleppTest < Test::Unit::TestCase
     mock_sink.expects(:write).with("bar")
     mock_sink.expects(:write).with("baz")
 
-    mock_sink.expects(:finalize)
-
     mock_parts = mock
-    mock_sink.expects(:parts).returns(mock_parts)
+    mock_sink.expects(:finalize).returns(mock_parts)
 
     parts = Schlepp.schlepp(mock_source, mock_sink)
 

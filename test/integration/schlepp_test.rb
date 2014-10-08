@@ -19,6 +19,7 @@ class Schlepp::IntegrationTest < Test::Unit::TestCase
   test '.schlepp' do
     res = Schlepp.schlepp(@mock_source, @mock_sink)
 
+    puts res.inspect
     refute res.nil?
   end
 end

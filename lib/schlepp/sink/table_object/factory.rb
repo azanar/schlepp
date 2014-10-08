@@ -1,3 +1,5 @@
+require 'schlepp/sink/table_object/writer/factory'
+
 module Schlepp
   class Sink
     class TableObject
@@ -18,7 +20,7 @@ module Schlepp
           end
 
           def writer
-            Writer::Builder.new(@factory, @components, self.new).new
+            Writer::Factory.new(@factory, @components, self.new).new
           end
         end
     end

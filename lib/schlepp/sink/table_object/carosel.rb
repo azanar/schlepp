@@ -17,6 +17,9 @@ module Schlepp
           raise_if_finalized
           if rotate?(data)
             rotate
+            if rotate?(data)
+              raise
+            end
           end
           Array(data).each do |r|
             @current.write(r)
@@ -42,15 +45,19 @@ module Schlepp
         def rotate
           @current.finalize if @current
 
-          builder = Schlepp::Sink::TableObject::Factory.new(@factory, @chain)
-
-          to = builder.new
+          to = table_object_factory.new
 
           @parts << to
 
           builder = Schlepp::Sink::TableObject::Writer::Factory.new(@factory, @chain, to)
 
           @current = builder.new
+        end
+
+        private
+
+        def table_object_factory
+          @table_object_factory ||= Schlepp::Sink::TableObject::Factory.new(@factory, @chain)
         end
       end
     end

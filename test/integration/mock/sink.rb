@@ -4,6 +4,7 @@ module Schlepp::IntegrationTest::Mock
     end
 
     def finalize
+      parts
     end
 
     def parts
