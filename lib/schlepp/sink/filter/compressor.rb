@@ -1,5 +1,5 @@
 require 'schlepp/sink/filter'
-require 'schlepp/sink/table_object/compressor/writer'
+require 'schlepp/sink/filter/compressor/writer'
 
 module Schlepp
   class Sink

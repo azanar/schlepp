@@ -1,4 +1,4 @@
-require 'schlepp/sink/table_object/compressor/stream'
+require 'schlepp/sink/filter/compressor/stream'
 
 module Schlepp
   class Sink
