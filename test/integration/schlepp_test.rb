@@ -14,14 +14,14 @@ class Schlepp::IntegrationTest < Test::Unit::TestCase
       :columns => ["baz", "blarg"]
     })
 
-    @observer = mock
+    @verifier = mock
 
     @mock_writer = mock
     require 'mock/source'
     @mock_source = Mock::Source.new
 
     require 'mock/sink'
-    @mock_sink = Mock::Sink.new(@model, @observer)
+    @mock_sink = Mock::Sink.new(@model, @verifier)
   end
 
   test '.schlepp' do

@@ -2,9 +2,9 @@ require 'schlepp/sink/filter/chunker'
 
 module Schlepp::IntegrationTest::Mock
   class Factory
-    def initialize(model, observer)
+    def initialize(model, verifier)
       @model = model
-      @observer = observer
+      @verifier = verifier
     end
 
     def url
@@ -16,26 +16,26 @@ module Schlepp::IntegrationTest::Mock
     end
 
     def writer(to)
-      Writer.new(to, @observer)
+      Writer.new(to, @verifier)
     end
   end
   class Writer
-    def initialize(table_object, observer)
+    def initialize(table_object, verifier)
       @table_object = table_object
-      @observer = observer
+      @verifier = verifier
     end
 
     def write(data)
-      @observer.write(data)
+      @verifier.write(data)
     end
     def finalize
-      @observer.finalize
+      @verifier.finalize
     end
   end
   class Sink
-    def initialize(model, observer)
+    def initialize(model, verifier)
       @model = model
-      @factory = Factory.new(@model, observer)
+      @factory = Factory.new(@model, verifier)
       @sink = Schlepp::Sink.new(@model, @factory, [Schlepp::Sink::Filter::Chunker.new])
     end
 
