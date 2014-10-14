@@ -5,7 +5,7 @@ if ENV["COVERAGE"]
   SimpleCov.start do
     add_group "Lib", "lib"
     add_filter "/test/"
-    command_name "Unit Tests"
+    command_name "Integration Tests"
     formatter SimpleCov::Formatter::MultiFormatter[
       SimpleCov::Formatter::HTMLFormatter,
       Coveralls::SimpleCov::Formatter,
