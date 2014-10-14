@@ -25,6 +25,12 @@ class Schlepp::IntegrationTest < Test::Unit::TestCase
   end
 
   test '.schlepp' do
+    1.upto(100).each do |x|
+      @verifier.expects(:write).with(x.to_s)
+    end
+
+    @verifier.expects(:finalize)
+
     res = Schlepp.schlepp(@mock_source, @mock_sink)
 
     object = res.first
