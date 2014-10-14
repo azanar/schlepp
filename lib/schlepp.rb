@@ -13,6 +13,5 @@ module Schlepp
       sink.write(s)
     end
     sink.finalize
-    sink.parts
   end
 end

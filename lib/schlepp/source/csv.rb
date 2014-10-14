@@ -17,7 +17,7 @@ module Schlepp
 
       def each
         @csv.each do |r|
-          yield r.fields
+          yield [r.fields]
         end
       end
     end
