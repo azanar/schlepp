@@ -1,8 +1,11 @@
 language: ruby
 
 env:
-  - TEST_SUITE=unit
-  - TEST_SUITE=integration
+  global:
+    - COVERAGE=true
+  matrix:
+    - TEST_SUITE=unit
+    - TEST_SUITE=integration
 
 script: "bundle exec rake test:$TEST_SUITE"
 

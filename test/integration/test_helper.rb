@@ -1,7 +1,6 @@
-require 'coveralls'
-require 'codeclimate-test-reporter'
-
-if ENV["ENABLE_SIMPLE_COV"]
+if ENV["COVERAGE"]
+  require 'coveralls'
+  require 'codeclimate-test-reporter'
   require 'simplecov'
   SimpleCov.start do
     add_group "Lib", "lib"
