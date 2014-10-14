@@ -1,4 +1,5 @@
 require 'coveralls'
+require 'codeclimate-test-reporter'
 
 if ENV["ENABLE_SIMPLE_COV"]
   require 'simplecov'
@@ -8,7 +9,8 @@ if ENV["ENABLE_SIMPLE_COV"]
     command_name "Unit Tests"
     formatter SimpleCov::Formatter::MultiFormatter[
       SimpleCov::Formatter::HTMLFormatter,
-      Coveralls::SimpleCov::Formatter
+      Coveralls::SimpleCov::Formatter,
+      CodeClimate::TestReporter::Formatter
     ]
   end
 end
