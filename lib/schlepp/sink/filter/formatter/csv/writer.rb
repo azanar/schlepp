@@ -2,8 +2,8 @@ require 'csv'
 
 module Schlepp
   class Sink 
-    class TableObject
-      class Formatter
+    module Filter
+      module Formatter
         class Csv
           class Writer
             def initialize(writer, opts = {})
@@ -12,6 +12,10 @@ module Schlepp
 
             def write(rows)
               @writer.write(rows.to_csv)
+            end
+
+            def rotate?
+              false
             end
 
             def finalize
