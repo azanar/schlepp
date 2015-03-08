@@ -5,6 +5,7 @@ require 'hydrogen'
 require 'schlepp'
 require 'schlepp/sink/filter/chunker'
 require 'schlepp/sink/filter/compressor'
+require 'schlepp/sink/filter/formatter/csv'
 
 require 'uri'
 require 'pp'
@@ -22,7 +23,8 @@ model = Hydrogen::Model.new(config)
 source = Schlepp::Source::CSV.new(File.new('data.csv','r'))
 
 sink = Schlepp::Sink::Fs.new(model, URI('file:///tmp/foo/'),
-                             :filters => [Schlepp::Sink::Filter::Chunker.new(:chunk_size => 4000),
+                             :filters => [Schlepp::Sink::Filter::Formatter::Csv.new,
+                                          Schlepp::Sink::Filter::Chunker.new(:chunk_size => 4000),
                                           Schlepp::Sink::Filter::Compressor.new])
 
 res = Schlepp.schlepp(source, sink)
