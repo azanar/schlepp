@@ -1,3 +1,10 @@
+[![Build Status](https://travis-ci.org/azanar/schlepp.svg)](https://travis-ci.org/azanar/schlepp)
+[![Dependency Status](http://img.shields.io/gemnasium/azanar/schlepp.svg)](https://gemnasium.com/azanar/schlepp)
+[![Coverage Status](http://img.shields.io/coveralls/azanar/schlepp.svg)](https://coveralls.io/r/azanar/schlepp)
+[![Code Climate](http://img.shields.io/codeclimate/github/azanar/schlepp.svg)](https://codeclimate.com/github/azanar/schlepp)
+[![Gem Version](http://img.shields.io/gem/v/schlepp.svg)](https://rubygems.org/gems/baler)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://azanar.mit-license.org)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 # Schlepp
 
 An extensible chunking file transferer
