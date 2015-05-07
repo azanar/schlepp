@@ -1,7 +1,7 @@
-Contributing to Quasar
+Contributing to Schlepp
 ========================
 
-First of all, thanks for your interest in contributing to Quasar!
+First of all, thanks for your interest in contributing to Schlepp!
 
 Below are a list of guidelines to help keep this project sane in the face of open source entropy.
 
@@ -19,7 +19,7 @@ Make a fork of this project, and hack to your heart's content. Once you have som
 1. Keeping a consistent style in the codebase is important for maintainability. When possible, please stick to the guidelines within [this guide](https://github.com/bbatsov/ruby-style-guide).
 1. Pay attention to things like code climate and test coverage. A drop in these metrics will not necessarily preclude a patch from being accepted, but we'd much prefer to keep these numbers high.
 
-Please keep in mind your contributions will be licensed the same as the rest of Quasar, under the MIT license.
+Please keep in mind your contributions will be licensed the same as the rest of Schlepp, under the MIT license.
 
 It may take the developer a day or two to get to your pull request. If your request has not been responded to in a few days, though, feel free to ping the developer team, preferably through a comment on the pull.
 
